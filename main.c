@@ -92,7 +92,7 @@ int list_search(struct node **head, int ricercato) {
     return 0;
 }
 
-int list_delete(struct node **head, int key) {
+void list_delete(struct node **head, int key) {
     struct node *tmp = *head;
     struct node *prev = NULL;
     //tmp diverso da NULL vuol dire che nella nostra lista c'è almeno un elemento
@@ -105,7 +105,7 @@ int list_delete(struct node **head, int key) {
 
     //Ricerca il nodo da elminare, tenendo traccia del precedente per poter "ricollegare la lista"
     while(tmp != NULL && tmp->data != key) {
-        prev = temp;
+        prev = tmp;
         tmp = tmp->next;
     }
 
